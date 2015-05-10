@@ -7,13 +7,17 @@ What is the largest prime factor of the number 600851475143 ?
 
 def largestprime(n):
     i=2
-    while i * i < n:
+    while i * i <= n:
         while n % i == 0:
-             n = n / i
+            if n==i:
+                return n
+            
+            n = n / i
         i = i + 1
 
-    print (n)
+    return n
+    
 
 
 print intro    
-largestprime(600851475143)
+print largestprime(600851475143)
